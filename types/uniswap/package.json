@@ -1,0 +1,28 @@
+{
+    "name": "@eth-types/uniswap",
+    "version": "0.0.1",
+    "description": "Contract ABIs and TypeScript definitions for uniswap",
+    "license": "MIT",
+    "main": "",
+    "repository": {
+        "type": "git",
+        "url": "https://www.github.com/ethereum-optimism/eth-types.git"
+    },
+    "dependencies": {
+        "typechain": "latest",
+        "@typechain/ethers-v5": "latest",
+        "@typechain/ethers-v4": "latest",
+        "@typechain/truffle-v5": "latest",
+        "@typechain/truffle-v4": "latest",
+        "@typechain/web3-v1": "latest"
+    },
+    "scripts": {
+        "postinstall": "npm run typechain:all",
+        "typechain:all": "npm run typechain:ethers-v5 && npm run typechain:ethers-v4 && npm run typechain:truffle-v5 && npm run typechain:truffle-v4 && npm run typechain:web3-v1",
+        "typechain:ethers-v5": "typechain --target ethers-v5 --outDir ethers-v5 \"abis/*.json\"",
+        "typechain:ethers-v4": "typechain --target ethers-v4 --outDir ethers-v4 \"abis/*.json\"",
+        "typechain:truffle-v5": "typechain --target truffle-v5 --outDir truffle-v5 \"abis/*.json\"",
+        "typechain:truffle-v4": "typechain --target truffle-v4 --outDir truffle-v4 \"abis/*.json\"",
+        "typechain:web3-v1": "typechain --target web3-v1 --outDir web3-v1 \"abis/*.json\""
+    }
+}
